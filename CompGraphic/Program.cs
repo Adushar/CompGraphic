@@ -6,7 +6,7 @@ namespace CompGraphic
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ProgramOne.Lunch();
         }
     }
 }
