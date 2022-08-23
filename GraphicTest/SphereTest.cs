@@ -15,7 +15,7 @@ namespace GraphicTest
             Ray ray = new Ray(p1, p2);
             Sphere sphere = new Sphere(new Point(-1, 1, 2), 4);
 
-            var result = sphere.CheckIntersection(ray);
+            var result = sphere.GetIntersection(ray);
             Assert.AreEqual(true, result);
         }
 
@@ -27,7 +27,7 @@ namespace GraphicTest
             Ray ray = new Ray(p1, p2);
             Sphere sphere = new Sphere(new Point(-1, 1, 2), 4);
 
-            var result = sphere.CheckIntersection(ray);
+            var result = sphere.GetIntersection(ray);
             Assert.AreEqual(false, result);
         }
     }

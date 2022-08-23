@@ -17,5 +17,10 @@ namespace CompGraphic.Models
             Origin = p1;
             Direction = new Vector(p1, p2);
         }
+
+        public Point atDistance(double distance)
+        {
+            return (distance * Direction) + Origin;
+        }
     }
 }
