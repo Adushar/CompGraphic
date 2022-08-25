@@ -6,7 +6,7 @@ namespace CompGraphic
     {
         static void Main(string[] args)
         {
-            ProgramOne.Lunch();
+            ProgramTwo.Lunch();
         }
     }
 }
