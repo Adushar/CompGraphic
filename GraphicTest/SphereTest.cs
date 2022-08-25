@@ -16,7 +16,7 @@ namespace GraphicTest
             Sphere sphere = new Sphere(new Point(-1, 1, 2), 4);
 
             var result = sphere.GetIntersection(ray);
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(2002, result);
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace GraphicTest
             Sphere sphere = new Sphere(new Point(-1, 1, 2), 4);
 
             var result = sphere.GetIntersection(ray);
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(null, result);
         }
     }
 }
