@@ -14,14 +14,14 @@ namespace CompGraphic.Models
             Height = height;
         }
 
-        public Point GetPointOnPlane(double x, double y, double max_x, double max_y)
+        public Point GetPointOnPlane(double x, double y, double max_x, double max_z)
         {
             double x_coef = Width / max_x;
-            double y_coef = Height / max_y;
+            double z_coef = Height / max_z;
             double trueX = Center.X - (Width / 2) + (x * x_coef);
-            double trueY = Center.Y - (Height / 2) + (y * y_coef);
+            double trueZ = Center.Z - (Height / 2) + (y * z_coef);
 
-            return new Point(trueX, trueY, Center.Z);
+            return new Point(trueX, Center.Y, trueZ);
         }
     }
 }

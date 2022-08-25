@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CompGraphic.Models;
+using CompGraphic.Utils;
 
 namespace CompGraphic
 {
@@ -10,14 +11,13 @@ namespace CompGraphic
         {
             int width = 600;
             int height = 600;
-            Camera camera = new Camera(new Point(0, 0, 30), width, height);
+            Camera camera = new Camera(new Point(0, 1, 0), width, height);
             DirectionalLight light = new DirectionalLight(new Point(50, 50, 50), new Point(0, 0, 0));
-            Triangle triangle = new Triangle(new Point(50, 100, -15), new Point(-180, 50, 10), new Point(-100, -200, 0));
-            Triangle triangle2 = new Triangle(new Point(-200, -100, 200), new Point(-180, 50, 10), new Point(-100, -200, 0));
 
             List<SceneElement> sceneElements = new List<SceneElement>();
-            sceneElements.Add(triangle);
-            sceneElements.Add(triangle2);
+            ObjFileParser fileParser = new ObjFileParser(@"/Users/a1/Projects/CompGraphic/CompGraphic/Resources/cow.obj");
+            foreach (Triangle triangle in fileParser.getTriangles()) { sceneElements.Add(triangle); }
+            
             Scene scene = new Scene(sceneElements, light, camera);
             double[][] result = scene.renderScene(width, height);
 

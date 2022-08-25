@@ -9,7 +9,7 @@ namespace CompGraphic.Models
         public Camera(Point origin, double width, double height)
         {
             Origin = origin;
-            Screen = new CameraScreen(new Point(origin.X, origin.Y, origin.Z - 10), width, height);
+            Screen = new CameraScreen(new Point(origin.X, origin.Y - 0.5, origin.Z), 1, 1);
         }
 
         public Ray GetRay(double x, double y, double max_x, double max_y)
